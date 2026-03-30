@@ -1,107 +1,129 @@
-Luxior OSINT
+# Luxior OSINT
 
-Multi-language OSINT intelligence suite. C++ for network, Go for crawling, Rust for parsing, Node.js for darkweb, Python for orchestration.
-
----
-
-Why I Built This
-
-I got tired of Python-only OSINT tools. They're slow, they can't scale, and they fail when you need them most. So I built Luxior OSINT to solve real problems:
-
-· C++ handles raw socket scanning because Python can't compete at kernel level
-· Go crawls thousands of pages concurrently because threads in Python are a joke
-· Rust parses gigabytes of data without crashing because memory safety matters
-· Node.js talks to Tor and automates browsers because that's what it's good at
-· Python orchestrates everything because I needed something to glue it all together
-
-This isn't a toy. I use this for my own research. Now it's on GitHub.
+Multi-language OSINT intelligence suite.  
+C++ for networking, Go for crawling, Rust for parsing, Node.js for darkweb, Python for orchestration.
 
 ---
 
-What It Does
+## Why I Built This
 
-Module Language Capability
-Network Probe C++ SYN scan, port detection, banner grabbing, DNS enumeration, service fingerprinting
-Web Crawler Go Concurrent crawling, link extraction, email/phone collection, IP discovery
-Data Parser Rust Pattern extraction, crypto address detection, social media handle identification
-Darkweb Module Node.js Onion site scraping, Tor integration, darkweb search engine queries
-Orchestrator Python Pipeline coordination, PostgreSQL storage, Redis queuing, report generation
+Most OSINT tools are Python-only.  
+They’re slow, hard to scale, and break under pressure.
+
+So I built Luxior OSINT to solve real-world problems:
+
+- **C++** handles raw socket scanning — because Python can’t compete at kernel level  
+- **Go** crawls thousands of pages concurrently — because Python threads don’t scale well  
+- **Rust** parses massive datasets safely — no crashes, no memory issues  
+- **Node.js** handles Tor + browser automation — best ecosystem for it  
+- **Python** orchestrates everything — flexible and practical glue  
+
+This isn’t a toy project.  
+I built this for real usage — now it’s public.
 
 ---
 
-Quick Install
+## Features
+
+| Module           | Language  | Capability |
+|------------------|----------|------------|
+| Network Probe    | C++      | SYN scan, port detection, banner grabbing, DNS enumeration |
+| Web Crawler      | Go       | Concurrent crawling, link extraction, email/phone/IP discovery |
+| Data Parser      | Rust     | Pattern extraction, crypto detection, social handle parsing |
+| Darkweb Module   | Node.js  | Onion scraping, Tor integration, search automation |
+| Orchestrator     | Python   | Pipeline control, PostgreSQL storage, Redis queue |
+
+---
+
+## Quick Install
 
 ```bash
-git clone https://github.com/JettRnh/luxior-osint.git
+git clone https://github.com/JettRnh/Luxior-OSINT.git
 cd luxior-osint
+
 chmod +x deploy_lux_osint.sh
 ./deploy_lux_osint.sh
-```
 
-The script handles everything: dependencies, compilation, database setup, Tor configuration.
+The script handles:
+
+Dependencies
+
+Compilation
+
+Database setup
+
+Tor configuration
+
+
 
 ---
 
-Usage Examples
+Usage
 
-Full OSINT scan:
+Full Scan
 
-```bash
 python3 lux_orchestrator.py target.com
-```
 
-Network probe only:
+Network Probe
 
-```bash
 ./lux_probe target.com 1 65535
-```
 
-Web crawl only:
+Web Crawling
 
-```bash
 ./lux_crawler https://target.com 5 1000
-```
 
-Parse data:
+Data Parsing
 
-```bash
-./lux_parser ./downloaded_files/
-```
+./lux_parser ./data/
 
-Darkweb search:
+Darkweb Module
 
-```bash
 node lux_darkweb.js search "target"
 node lux_darkweb.js crawl onions.txt
 node lux_darkweb.js report
-```
+
 
 ---
 
 Requirements
 
-· Linux/macOS (Windows WSL works)
-· GCC/G++ for C++
-· Go 1.18+
-· Rustc
-· Node.js 16+
-· Python 3.8+
-· PostgreSQL
-· Redis
-· Tor (for darkweb)
+Linux / macOS (WSL supported)
 
-The deployment script checks for all of these.
+GCC / G++
+
+Go 1.18+
+
+Rust
+
+Node.js 16+
+
+Python 3.8+
+
+PostgreSQL
+
+Redis
+
+Tor (for darkweb module)
+
+
+All dependencies are handled automatically by the setup script.
+
 
 ---
 
 Output
 
-Results go to:
+Results are stored in:
 
-· PostgreSQL database for querying
-· JSON reports in the current directory
-· Redis queue for distributed processing
-· Log files in ./logs/
+PostgreSQL database
+
+JSON reports (local directory)
+
+Redis queue (distributed processing)
+
+Logs (./logs/)
+
+
 
 ---
 
@@ -109,23 +131,37 @@ Performance
 
 On a standard 4-core VPS:
 
-· Port scan: 1000 ports in <10 seconds
-· Web crawl: 500 pages/minute
-· Data parsing: 10,000 files in 2 seconds
-· Darkweb: respects Tor rate limits
+Port scan → ~1000 ports in <10s
+
+Crawling → ~500 pages/min
+
+Parsing → ~10,000 files in ~2s
+
+Darkweb → limited by Tor latency
+
+
+
+---
+
+Notes
+
+This tool is built for research and OSINT purposes only.
+Use responsibly.
+
 
 ---
 
 Credits
 
 Owner: Jet
-GitHub: JettRnh
+GitHub: https://github.com/JettRnh/Luxior-OSINT
 TikTok: @jettinibos_
 
-I built this from scratch. Every line of code is mine. No templates, no copied scripts.
 
 ---
 
 License
 
-MIT. Use it, modify it, break it. Just don't blame me if you do something stupid with it.
+MIT License
+
+Use it, modify it, break it — but use it responsibly.
