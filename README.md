@@ -37,131 +37,101 @@ I built this for real usage — now it’s public.
 
 ## Quick Install
 
-```bash
-git clone https://github.com/JettRnh/Luxior-OSINT.git
-cd luxior-osint
-
-chmod +x deploy_lux_osint.sh
-./deploy_lux_osint.sh
+    git clone https://github.com/JettRnh/Luxior-OSINT.git
+    cd luxior-osint
+    chmod +x deploy_lux_osint.sh
+    ./deploy_lux_osint.sh
 
 The script handles:
 
-Dependencies
-
-Compilation
-
-Database setup
-
-Tor configuration
-
-
+- Dependencies  
+- Compilation  
+- Database setup  
+- Tor configuration  
 
 ---
 
-Usage
+## Usage
 
-Full Scan
+### Full Scan
 
-python3 lux_orchestrator.py target.com
+    python3 lux_orchestrator.py target.com
 
-Network Probe
+### Network Probe
 
-./lux_probe target.com 1 65535
+    ./lux_probe target.com 1 65535
 
-Web Crawling
+### Web Crawling
 
-./lux_crawler https://target.com 5 1000
+    ./lux_crawler https://target.com 5 1000
 
-Data Parsing
+### Data Parsing
 
-./lux_parser ./data/
+    ./lux_parser ./data/
 
-Darkweb Module
+### Darkweb Module
 
-node lux_darkweb.js search "target"
-node lux_darkweb.js crawl onions.txt
-node lux_darkweb.js report
-
+    node lux_darkweb.js search "target"
+    node lux_darkweb.js crawl onions.txt
+    node lux_darkweb.js report
 
 ---
 
-Requirements
+## Requirements
 
-Linux / macOS (WSL supported)
-
-GCC / G++
-
-Go 1.18+
-
-Rust
-
-Node.js 16+
-
-Python 3.8+
-
-PostgreSQL
-
-Redis
-
-Tor (for darkweb module)
-
+- Linux / macOS (WSL supported)  
+- GCC / G++  
+- Go 1.18+  
+- Rust  
+- Node.js 16+  
+- Python 3.8+  
+- PostgreSQL  
+- Redis  
+- Tor  
 
 All dependencies are handled automatically by the setup script.
 
-
 ---
 
-Output
+## Output
 
 Results are stored in:
 
-PostgreSQL database
-
-JSON reports (local directory)
-
-Redis queue (distributed processing)
-
-Logs (./logs/)
-
-
+- PostgreSQL database  
+- JSON reports (local directory)  
+- Redis queue (distributed processing)  
+- Logs (./logs/)  
 
 ---
 
-Performance
+## Performance
 
 On a standard 4-core VPS:
 
-Port scan → ~1000 ports in <10s
-
-Crawling → ~500 pages/min
-
-Parsing → ~10,000 files in ~2s
-
-Darkweb → limited by Tor latency
-
-
+- Port scan → ~1000 ports in <10s  
+- Crawling → ~500 pages/min  
+- Parsing → ~10,000 files in ~2s  
+- Darkweb → limited by Tor latency  
 
 ---
 
-Notes
+## Notes
 
-This tool is built for research and OSINT purposes only.
+This tool is built for research and OSINT purposes only.  
 Use responsibly.
 
+---
+
+## Credits
+
+Owner: Jet  
+GitHub: https://github.com/JettRnh/Luxior-OSINT  
+TikTok: @jettinibos_  
 
 ---
 
-Credits
+## License
 
-Owner: Jet
-GitHub: https://github.com/JettRnh/Luxior-OSINT
-TikTok: @jettinibos_
-
-
----
-
-License
-
-MIT License
+MIT License  
 
 Use it, modify it, break it — but use it responsibly.
